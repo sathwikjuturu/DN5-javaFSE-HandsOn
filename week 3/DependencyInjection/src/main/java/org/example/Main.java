@@ -1,0 +1,18 @@
+package org.example;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(AppConfig.class);
+
+        Notification notification = context.getBean(Notification.class);
+
+        notification.notifyUser();
+
+        context.close();
+    }
+}
